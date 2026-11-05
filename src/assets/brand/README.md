@@ -1,8 +1,8 @@
-# Olli identity — Open orbit
+# Olli identity — Nested monogram
 
-Original vector artwork authored for this repository, not a stock icon, font glyph or taOS asset. The open circular body represents a workspace; its separated blue satellite represents agency and action. Custom outlined wordmark paths avoid external fonts. No trademark clearance or uniqueness search has been performed.
+Original vector artwork authored for this repository, not a stock icon, font glyph or taOS asset. A continuous precision-cut O encloses two nested L strokes: a compact O/LL monogram with a silver perimeter and blue interior. The flat monochrome version preserves the same geometry. Custom outlined wordmark paths avoid external fonts. No trademark clearance or uniqueness search has been performed.
 
-- `olli-mark.svg`: silver/blue mark for dark surfaces.
+- `olli-mark.svg`: silver/blue monogram for dark surfaces.
 - `olli-mark-mono.svg`: flat white mark for single-color applications.
 - `olli-logo.svg`: horizontal dark-surface lockup with custom outlined wordmark.
 - `favicon.svg`: simplified small-size mark on charcoal.

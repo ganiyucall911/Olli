@@ -19,3 +19,7 @@ Dock controls lift subtly on precise-pointer hover; launcher tiles lift their ic
 ## Additional supplied component references
 
 The five supplied IMG_2764–IMG_2768 references guide material treatment: nested graphite frames, top-edge highlights, recessed input wells, raised rounded controls, circular dock buttons and restrained active blue/green signals. Applied those styles to every existing feature surface through shared CSS. No screenshot artwork, provider marks, fictional teammates, generated-image previews or fake analytics are copied into the product. This updates the current frontend only; it does not imply the backend integrations are built.
+
+## Identity refinement
+
+Replaced the satellite/orbit mark with a continuous O enclosing two nested blue L strokes (O/LL monogram), with matching monochrome/favicon assets. Window action dots now use requested macOS-style red #ff5f57, amber #febc2e and green #28c840; labels and functioning controls are preserved. This is not an Apple asset or exact native-control implementation.

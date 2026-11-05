@@ -57,3 +57,10 @@ form button{border-color:#86a7ff70;box-shadow:inset 0 1px #ffffff40,0 3px 8px #0
 .list li{border-bottom:1px solid #171717;box-shadow:0 1px #ffffff08;padding:18px 8px}.list button{background:linear-gradient(#414141,#303030);border-color:#4c4c4c;box-shadow:inset 0 1px #ffffff10,0 2px 6px #0005;border-radius:15px}.list input[type=checkbox]{width:17px;height:17px}
 @media(hover:hover) and (pointer:fine){#apps button:hover{background:linear-gradient(#424242,#303030);border-color:#656565;box-shadow:inset 0 1px #ffffff20,0 8px 20px #0006}#dock button:hover{border-color:#777;box-shadow:inset 0 1px #ffffff25,0 7px 15px #0007}}
 @media(max-width:700px){.workspace{padding:8px}#content{padding:24px 16px;border-radius:14px}.card{padding:20px;margin-top:28px}#apps button{min-height:100px}#dock{gap:8px}}
+
+/* User-requested macOS-style traffic-light controls; actions remain accessible. */
+.window-controls{gap:8px}.window-controls button{width:14px;height:14px;font-size:10px;line-height:12px;border:1px solid #0002!important;box-shadow:inset 0 1px #ffffff20,0 1px 2px #0005!important;color:transparent!important}
+.window-controls #close-window,.window-controls #close-window:hover{background:#ff5f57!important}
+.window-controls #minimize-window,.window-controls #minimize-window:hover{background:#febc2e!important}
+.window-controls #maximize-window,.window-controls #maximize-window:hover{background:#28c840!important}
+.window-controls:hover button,.window-controls button:focus-visible{color:#0009!important}.window-controls button:hover{filter:brightness(1.1)}
