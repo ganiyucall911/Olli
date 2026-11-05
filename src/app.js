@@ -18,6 +18,7 @@ function render(){
  document.querySelector('#window-title').textContent=feature.name;
  document.querySelectorAll('[data-app]').forEach(b=>b.setAttribute('aria-current',String(b.dataset.app===active)));
  content.replaceChildren();
+ content.dataset.view=active;
  const label=document.createElement('p');label.className='eyebrow';label.textContent='YOUR OLLI WORKSPACE';
  const heading=document.createElement('h2');heading.textContent=active==='chat'?'What shall we do today?':feature.name;
  const desc=document.createElement('p');desc.className='description';desc.textContent=feature.description;content.append(label,heading,desc);
