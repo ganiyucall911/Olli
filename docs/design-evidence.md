@@ -15,3 +15,7 @@ The supplied IMG_2759.png and IMG_2760.png supersede the invented blue/teal/purp
 The Olli mark is original vector artwork, not a taOS logo or stock icon. Open-orbit mark, custom outlined wordmark, monochrome alternate and favicon are under src/assets/brand, with usage guidance and provenance. No trademark clearance is claimed. Silver/neutral materials and restrained blue detail follow the supplied reference palette; production use still requires normal brand review.
 
 Dock controls lift subtly on precise-pointer hover; launcher tiles lift their icons, controls gain inset highlights, forms gain focus-within borders, and active presses compress slightly. Keyboard focus remains explicit. Reduced-motion mode removes transforms/transitions; disabled actions remain disabled without hover animation. Local checks cover these behaviors and logo loading at desktop/mobile sizes. This is interface polish, not completion of the assistant backend or external services.
+
+## Additional supplied component references
+
+The five supplied IMG_2764–IMG_2768 references guide material treatment: nested graphite frames, top-edge highlights, recessed input wells, raised rounded controls, circular dock buttons and restrained active blue/green signals. Applied those styles to every existing feature surface through shared CSS. No screenshot artwork, provider marks, fictional teammates, generated-image previews or fake analytics are copied into the product. This updates the current frontend only; it does not imply the backend integrations are built.
