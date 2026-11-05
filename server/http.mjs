@@ -1,12 +1,14 @@
 import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
+import {createGitHubHandler} from './github.mjs';
 import {createChatHandler} from './chat.mjs';
-export function createServer({root=process.cwd(),chat=createChatHandler()}={}) {
+export function createServer({root=process.cwd(),chat=createChatHandler(),github=createGitHubHandler()}={}) {
   root=path.resolve(root);
   const server=http.createServer(async(req,res)=>{
     try {
       const name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+      if(name==='/api/github/repository'){await github(req,res);return;}
       if(name==='/api/chat'){await chat(req,res);return;}
       if(!['GET','HEAD'].includes(req.method)){res.writeHead(405).end();return;}
       // Serve only frontend assets: never expose server modules, tests or secrets.
