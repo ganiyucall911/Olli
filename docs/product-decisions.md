@@ -35,3 +35,7 @@ No eligible provider/account has yet been verified. Until that is resolved, host
 ## Delivery
 
 Start from the new initial main commit. Do not import old Git history. Publish a reviewable first PR; no production cutover, credentials, billing changes or cloud provisioning.
+
+## Real asset requirement
+
+Use real, properly licensed SVG icons and genuine assets throughout Olli. No emoji/Unicode stand-ins, placeholder artwork or fake content presented as real. Vendor assets with provenance/license; do not copy taOS assets without permission.
