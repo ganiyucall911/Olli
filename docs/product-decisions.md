@@ -39,3 +39,9 @@ Start from the new initial main commit. Do not import old Git history. Publish a
 ## Real asset requirement
 
 Use real, properly licensed SVG icons and genuine assets throughout Olli. No emoji/Unicode stand-ins, placeholder artwork or fake content presented as real. Vendor assets with provenance/license; do not copy taOS assets without permission.
+
+## Accepted design freeze
+
+The user has accepted the current design for now. No visual or interaction design changes are permitted without their explicit request or approval of the specific change. Preserve the current graphite palette/materials, O/LL identity, real SVG assets, macOS-style traffic-light controls, dock/launcher, centered chat column, typography, spacing and motion/responsive treatment.
+
+If a change is necessary (including for accessibility, functional implementation, security or dependencies), explain the reason and proposed design impact before editing, and wait for approval. A general instruction to continue implementation is not approval to alter design. Functional work should use the existing design system without modifying it.
