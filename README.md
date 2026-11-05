@@ -4,9 +4,10 @@ Original taOS-inspired UI/UX throughout a personal-assistant workspace. taOS is 
 
 ## Run
 
-Requires Node.js 22+. No package dependencies.
+Requires Node.js 22+. Install dependencies with `npm install` (WebLLM runtime and esbuild bundler).
 
 ```sh
+npm install
 npm test
 npm run build
 npm run dev
@@ -17,6 +18,10 @@ Open http://127.0.0.1:3018. `dist/` is the static frontend output.
 ## What works now
 
 Application navigation, responsive desktop-style shell, accessible feature surfaces, and a browser-local list with add/check/remove and reload persistence. List data stays in this browser; it is not account-isolated, encrypted or backed up. Do not store sensitive information here.
+
+## Browser-local AI trial
+
+[Opt-in WebLLM trial](docs/browser-ai.md) is wired into chat without API keys. Requires compatible WebGPU and a large model download. Local test browser lacked a GPU adapter; no live answer verified. This is a small local model, not hosted or tool-enabled AI.
 
 ## What does not work yet
 

@@ -15,7 +15,7 @@ with sync_playwright() as p:
     page.emulate_media(reduced_motion='reduce');chat.hover();page.wait_for_timeout(100)
     assert chat.evaluate('(e)=>getComputedStyle(e).transform')=='none'
     assert chat.evaluate('(e)=>getComputedStyle(e).transitionDuration')=='0s'
-    disabled=page.get_by_role('button',name='Not connected',exact=True)
+    disabled=page.get_by_role('button',name='Send',exact=True)
     assert disabled.is_disabled()
     page.set_viewport_size({'width':390,'height':844})
     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')

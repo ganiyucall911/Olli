@@ -1,3 +1,4 @@
+import {renderLocalChat} from './local-chat.js';
 import {features,executionStatus,parseLists} from './features.js';
 const content=document.querySelector('#content');
 let active='chat', items=[];
@@ -23,13 +24,11 @@ function render(){
  const heading=document.createElement('h2');heading.textContent=active==='chat'?'What shall we do today?':feature.name;
  const desc=document.createElement('p');desc.className='description';desc.textContent=feature.description;content.append(label,heading,desc);
  if(active==='lists'){renderLists();return;}
+ if(active==='chat'){renderLocalChat(content);return;}
  const card=document.createElement('div');card.className='card';
- const title=document.createElement('h3');title.textContent=active==='chat'?'Your workspace is ready. Your AI is not connected.':'Connection required';
+ const title=document.createElement('h3');title.textContent='Connection required';
  const p=document.createElement('p');p.textContent=active==='payments'?'Payment links and receipts are planned. No charges, purchases or card processing are available.':'This feature is part of Olli’s agreed scope, but its service is not connected in this fresh build.';
  card.append(title,p);content.append(card);
- if(active==='chat'){
- const form=document.createElement('form');const input=document.createElement('textarea');input.placeholder='Connect an AI provider before sending a message';input.setAttribute('aria-label','Message Olli');input.disabled=true;const button=document.createElement('button');button.textContent='Not connected';button.disabled=true;form.append(input,button);content.append(form);
- }
  notice('No API calls or code execution are enabled. Secrets must never be entered in chat.');
 }
 function renderLists(){
