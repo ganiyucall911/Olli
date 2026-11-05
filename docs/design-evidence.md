@@ -9,3 +9,9 @@ This is an original implementation of documented interaction patterns, NOT a ver
 ## User-supplied palette reference
 
 The supplied IMG_2759.png and IMG_2760.png supersede the invented blue/teal/purple palette. Local RGB analysis: canvas #000000; primary surfaces #282828; raised cards #363636; border/control #424242; light neutral #dcdcdc. Reference active dot includes #01a656. Blue action region includes #6993ff, #5987ff and #4176ff; implemented as a gradient. Text contrast uses brighter neutral shades for readability, rather than reproducing dim placeholder text. The original reference images are not redistributed. These are sampled reference colors, not independently authenticated taOS brand tokens. Layout/interaction and full visual fidelity remain separate verification work.
+
+## Original identity and interaction polish
+
+The Olli mark is original vector artwork, not a taOS logo or stock icon. Open-orbit mark, custom outlined wordmark, monochrome alternate and favicon are under src/assets/brand, with usage guidance and provenance. No trademark clearance is claimed. Silver/neutral materials and restrained blue detail follow the supplied reference palette; production use still requires normal brand review.
+
+Dock controls lift subtly on precise-pointer hover; launcher tiles lift their icons, controls gain inset highlights, forms gain focus-within borders, and active presses compress slightly. Keyboard focus remains explicit. Reduced-motion mode removes transforms/transitions; disabled actions remain disabled without hover animation. Local checks cover these behaviors and logo loading at desktop/mobile sizes. This is interface polish, not completion of the assistant backend or external services.

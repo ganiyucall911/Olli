@@ -8,3 +8,29 @@ header strong{display:flex;align-items:center;gap:8px}header strong img,nav butt
 /* Palette sampled from the user's IMG_2759/IMG_2760 references. */
 :root{--text:#f0f0f0;--muted:#b6b6b6;--line:#424242;--accent:#5987ff;--canvas:#000;--surface:#282828;--raised:#363636;--status-green:#01a656}
 body{background:var(--canvas);color:var(--text)}header{background:#171717cc;border-bottom:1px solid #282828}header button,header #status{background:linear-gradient(#363636,#282828);border-color:#424242;color:#dcdcdc}.window{background:var(--surface);border:1px solid #555;border-radius:24px;box-shadow:0 0 0 5px #151515,0 20px 60px #000,0 0 32px #ffffff0d}.chrome{background:linear-gradient(#363636,#282828);color:#dcdcdc;border-color:#424242}.chrome>span:first-child{color:inherit}.window-controls button,.window-controls button:nth-child(2),.window-controls button:nth-child(3){background:#424242;color:#dcdcdc;border:1px solid #555}#dock{background:linear-gradient(#303030ed,#222222ed);border:1px solid #555;box-shadow:0 0 0 5px #111,0 12px 28px #000;border-radius:30px}nav button,nav button:nth-child(3n){color:#dcdcdc}nav button>img,nav button:nth-child(3n)>img{background:transparent;border:0;filter:invert(1);opacity:.85}nav button[aria-current=true],nav button:hover{background:#424242;color:#fff}#launchpad{background:#282828f5;border-color:#555}#app-search{background:#363636;border-color:#555}.card{background:var(--raised);border-color:#424242;box-shadow:inset 0 1px #ffffff08}.card p,.notice,.description,footer{color:var(--muted)}.eyebrow{color:#dcdcdc}form{background:linear-gradient(#303030,#282828);border-color:#424242;box-shadow:inset 0 1px #ffffff08,0 8px 18px #0003}form button{background:linear-gradient(#6993ff,#4176ff);color:#fff;border:1px solid #5987ff;border-radius:18px}.list li{border-color:#424242}.list button{border-color:#555}.list input[type=checkbox]{accent-color:var(--status-green)}#dock button[aria-current=true]{position:relative}#dock button[aria-current=true]::after{content:'';position:absolute;bottom:1px;left:calc(50% - 2px);width:4px;height:4px;background:var(--status-green);border-radius:50%;box-shadow:0 0 6px #01a65680}
+
+/* Tactile reference-aligned interaction system. Never animate disabled actions. */
+:root{--ease-out:cubic-bezier(.2,.8,.2,1);--focus-ring:#83a6ff}
+.brand{display:inline-flex;align-items:center;flex:0 0 auto;border-radius:8px;text-decoration:none}.brand img{display:block;filter:none;padding:0;width:115px;height:40px;transition:opacity 180ms ease}.brand:hover img{opacity:.88}
+button,a,input,textarea{ -webkit-tap-highlight-color:transparent }
+button:not(:disabled){transition:background-color 160ms ease,border-color 160ms ease,box-shadow 180ms ease,transform 180ms var(--ease-out),opacity 160ms ease}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--focus-ring);outline-offset:4px}
+header button:not(:disabled):hover{border-color:#777;box-shadow:inset 0 1px #ffffff20,0 3px 10px #0006;background:linear-gradient(#424242,#303030)}
+#dock{overflow-y:hidden;padding-top:18px;padding-bottom:14px;isolation:isolate}
+#dock button{position:relative;border:1px solid transparent;border-radius:15px;transform-origin:center bottom}
+#dock button>img{transition:opacity 180ms ease;pointer-events:none}
+#dock button[aria-current=true]{background:linear-gradient(#424242,#303030);border-color:#ffffff14;box-shadow:inset 0 1px #ffffff14}
+#dock button[aria-current=true]::after{bottom:2px}
+#apps button{border:1px solid transparent;border-radius:18px}
+#apps button>img{transition:transform 180ms var(--ease-out),opacity 160ms ease}
+#apps button[aria-current=true]{background:#363636;border-color:#ffffff18}
+.window-controls button{transition:background-color 160ms ease,box-shadow 160ms ease,transform 160ms ease}
+.window-controls button:hover{background:#626262;box-shadow:0 0 0 3px #ffffff0a}
+.window-controls #close-window:hover{background:#a73c42;color:#fff}
+form:focus-within{border-color:#6d8bc9;box-shadow:0 0 0 3px #5987ff14,inset 0 1px #ffffff0c}
+form button:not(:disabled):hover{box-shadow:0 3px 16px #4176ff40,inset 0 1px #ffffff40;filter:brightness(1.08)}
+.list button:hover{border-color:#999;background:#424242}.list li{transition:background-color 160ms ease}.list li:hover{background:#ffffff04}
+button:not(:disabled):active{transform:translateY(1px) scale(.97);box-shadow:inset 0 2px 6px #0005}
+@media(hover:hover) and (pointer:fine){#dock button:hover,#dock button:focus-visible{background:linear-gradient(#494949,#363636);border-color:#ffffff25;transform:translateY(-4px) scale(1.08);box-shadow:0 5px 12px #0005,inset 0 1px #ffffff20}#dock button:hover>img{opacity:1}#apps button:hover{background:linear-gradient(#3c3c3c,#303030);border-color:#ffffff1a;box-shadow:inset 0 1px #ffffff12}#apps button:hover>img{transform:translateY(-3px);opacity:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}#dock button:hover,#dock button:focus-visible,#apps button:hover>img,button:not(:disabled):active{transform:none!important}}
+@media(max-width:700px){.brand img{width:92px;height:32px}header{padding-inline:12px}header #launcher-toggle{font-size:10px;padding:8px}header #status{max-width:128px}}
