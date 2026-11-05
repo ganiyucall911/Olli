@@ -20,7 +20,7 @@ Application navigation, responsive desktop-style shell, accessible feature surfa
 
 ## What does not work yet
 
-AI chat, authentication, cloud storage, execution, external connections, document/image generation, reminder scheduling and outbound delivery are not implemented. Their screens deliberately show unavailable status. A feature appearing in navigation is NOT a working integration.
+A disabled-by-default server-side chat API is available for local development (see [backend setup](docs/chat-backend.md)); it is not wired to the UI or activated with a live model. User authentication, cloud storage, execution, external connections, document/image generation, reminder scheduling and outbound delivery are not implemented. Their screens deliberately show unavailable status. A feature appearing in navigation is NOT a working integration.
 
 No credentials are collected and no commands execute. No paid fallback or hosting is configured. Free provider/account eligibility remains a blocker for real sandbox execution. A sleeping executor requires an independent scheduler to wake for reminders.
 
