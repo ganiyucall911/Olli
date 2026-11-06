@@ -23,3 +23,7 @@ The five supplied IMG_2764–IMG_2768 references guide material treatment: neste
 ## Identity refinement
 
 Replaced the satellite/orbit mark with a continuous O enclosing two nested blue L strokes (O/LL monogram), with matching monochrome/favicon assets. Window action dots now use requested macOS-style red #ff5f57, amber #febc2e and green #28c840; labels and functioning controls are preserved. This is not an Apple asset or exact native-control implementation.
+
+## Approved soft-graphite refinement
+
+User explicitly requested closer matching to the five supplied component images after reviewing the installable-app screenshot. Replaced sharper frame treatment with softer rounded graphite layers, restrained top-edge light, inset composer wells and pill-shaped action controls. Maintained the original Olli identity, traffic-light colors, centered chat and dock/launcher behavior. No fake analytics, teammates or provider logos added. Reference artwork is not embedded or redistributed. Design freeze continues outside this specific requested refinement.

@@ -70,3 +70,22 @@ form button{border-color:#86a7ff70;box-shadow:inset 0 1px #ffffff40,0 3px 8px #0
 #content[data-view="chat"]>.description,#content[data-view="chat"]>.card,#content[data-view="chat"]>form,#content[data-view="chat"]>.notice{width:100%;max-width:650px;margin-left:auto;margin-right:auto}
 #content[data-view="chat"]>.card p{margin-left:auto;margin-right:auto}
 #content[data-view="chat"] textarea{text-align:left}
+
+/* Explicitly approved reference refinement: pillowy graphite, not sharp chrome. */
+.window{border-radius:34px;border-color:#444;background:linear-gradient(145deg,#353535,#242424 55%,#202020);box-shadow:0 0 0 1px #101010,0 0 0 5px #141414,inset 0 2px 2px #ffffff20,inset 0 -2px 3px #0008,0 28px 75px #000,10px -5px 35px #5987ff0b}
+.chrome{background:linear-gradient(#343434,#2d2d2d);border-bottom-color:#242424;box-shadow:none;min-height:50px;padding-inline:24px}
+.workspace{padding:10px 14px 16px;background:transparent}
+#content{border-radius:25px;border-color:#3a3a3a;background:linear-gradient(150deg,#2d2d2d,#272727 60%,#242424);box-shadow:inset 0 1px #ffffff0b,0 1px 3px #0008;padding:38px 50px 42px}
+h2{font-size:clamp(27px,3.6vw,42px);letter-spacing:-1.3px;line-height:1.15}.description{font-size:13px;line-height:1.8;color:#bdbdbd}.eyebrow{font-size:9px;letter-spacing:1.7px}
+.card{border-radius:25px;padding:26px 28px;border-color:#404040;background:linear-gradient(145deg,#383838,#303030 65%,#2b2b2b);box-shadow:0 0 0 1px #212121,inset 0 1px #ffffff16,inset 0 -1px #0006,0 10px 20px #0004;margin-top:28px}
+.card::before{inset:0;border-radius:inherit;border-color:#ffffff04}.card h3{font-size:14px;letter-spacing:-.15px}.card p{font-size:12px;color:#c0c0c0;line-height:1.8}
+.card>button{border:1px solid #505050;border-radius:24px;padding:12px 22px;background:linear-gradient(#474747,#373737);color:#eee;font-size:12px;box-shadow:inset 0 1px #ffffff18,0 4px 10px #0004;margin-top:16px}
+.card>button:not(:disabled):hover{border-color:#707070;background:linear-gradient(#535353,#3b3b3b);box-shadow:inset 0 1px #ffffff25,0 6px 15px #0005}
+form{border-radius:30px;background:linear-gradient(160deg,#242424,#292929);border-color:#191919;box-shadow:inset 0 2px 5px #0007,0 1px #ffffff0b,0 0 0 5px #303030;padding:12px;margin-top:14px}
+textarea{font-size:13px;line-height:1.7;min-height:85px;padding:12px}form button{border-radius:50px;padding:12px 19px;font-size:11px;letter-spacing:.1px}form button:disabled{background:linear-gradient(#3c3c3c,#303030);border-color:#484848;color:#bbb;opacity:1;box-shadow:inset 0 1px #ffffff08}
+#launchpad{border-radius:34px;background:linear-gradient(150deg,#333333fa,#242424fc);box-shadow:0 0 0 5px #151515,inset 0 2px #ffffff18,0 30px 90px #000b}#apps{gap:18px}#apps button{border-radius:24px;border-color:#454545;background:linear-gradient(145deg,#3b3b3b,#2c2c2c);box-shadow:inset 0 1px #ffffff14,0 6px 14px #0004}
+#apps button>img{border:1px solid #ffffff12!important;border-radius:50%;padding:10px;background:#ffffff05!important}#apps button[aria-current=true]{border-color:#5987ff80;box-shadow:inset 0 1px #ffffff20,0 0 0 2px #5987ff10,0 8px 20px #0005}
+#dock{border-radius:38px;padding:14px 16px;background:linear-gradient(155deg,#393939ed,#262626f5);border-color:#505050;box-shadow:0 0 0 4px #111,inset 0 1px #ffffff26,inset 0 -1px #0008,0 15px 36px #0009}
+#dock button{background:linear-gradient(145deg,#424242,#2d2d2d);border-color:#4a4a4a;box-shadow:inset 0 1px #ffffff16,0 3px 8px #0006}#dock button[aria-current=true]{border-color:#777;box-shadow:0 0 0 2px #181818,0 0 0 3px #5987ffb0,inset 0 1px #ffffff25,0 4px 12px #0008}
+#app-search{border-radius:22px}header button{border-radius:22px}.list-form{border-radius:24px}.list button{border-radius:20px}.notice{font-size:11px}
+@media(max-width:700px){.window{border-radius:29px}.chrome{padding-inline:18px}.workspace{padding:8px 9px 12px}#content{padding:26px 16px 30px;border-radius:22px}.card{padding:23px 18px;border-radius:23px}#dock{padding:12px;gap:9px}.card>button{width:100%;min-height:44px}form{border-radius:26px;padding:10px}form button{padding:12px 14px}#launchpad{border-radius:28px}#apps{gap:12px}}
