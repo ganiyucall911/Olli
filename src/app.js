@@ -37,3 +37,5 @@ function renderLists(){
 }
 for(const f of features){const button=document.createElement('button');button.dataset.app=f.id;button.dataset.label=f.name;const icon=document.createElement('img');icon.src='/src/assets/icons/'+f.icon+'.svg';icon.alt='';icon.width=24;icon.height=24;const name=document.createElement('span');name.textContent=f.name;button.append(icon,name);button.onclick=()=>openApp(f.id);document.querySelector('#apps').append(button);const dockButton=button.cloneNode(true);dockButton.title=f.name;dockButton.setAttribute('aria-label',f.name);dockButton.onclick=()=>openApp(f.id);document.querySelector('#dock').append(dockButton);}
 document.querySelector('#status').onclick=()=>{notice(executionStatus().reason);content.focus();};load();render();
+
+if('serviceWorker' in navigator && window.isSecureContext){navigator.serviceWorker.register('/sw.js').catch(()=>{/* Offline installation unavailable; normal online use remains available. */});}

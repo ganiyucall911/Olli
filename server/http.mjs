@@ -12,11 +12,11 @@ export function createServer({root=process.cwd(),chat=createChatHandler(),github
       if(name==='/api/chat'){await chat(req,res);return;}
       if(!['GET','HEAD'].includes(req.method)){res.writeHead(405).end();return;}
       // Serve only frontend assets: never expose server modules, tests or secrets.
-      if(name!=='/'&&name!=='/index.html'&&!/^\/src\/[a-zA-Z0-9_./-]+\.(js|css|svg)$/.test(name)){res.writeHead(404).end();return;}
+      if(name!=='/'&&name!=='/index.html'&&name!=='/sw.js'&&name!=='/manifest.webmanifest'&&!/^\/src\/[a-zA-Z0-9_./-]+\.(js|css|svg|png)$/.test(name)){res.writeHead(404).end();return;}
       const file=path.resolve(root,'.'+(name==='/'?'/index.html':name));
       if(!file.startsWith(root+path.sep)){res.writeHead(404).end();return;}
       const data=await readFile(name==='/src/app.js'?path.join(root,'dist/src/app.js'):file);
-      res.setHeader('Content-Type',file.endsWith('.svg')?'image/svg+xml':file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html');
+      res.setHeader('Content-Type',file.endsWith('.webmanifest')?'application/manifest+json':file.endsWith('.png')?'image/png':file.endsWith('.svg')?'image/svg+xml':file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html');
       res.setHeader('X-Content-Type-Options','nosniff');res.end(req.method==='HEAD'?undefined:data);
     }catch{res.writeHead(404).end();}
   });

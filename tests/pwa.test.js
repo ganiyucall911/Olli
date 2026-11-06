@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync,existsSync} from 'node:fs';
+test('install manifest uses real app icons and approved colors',()=>{const m=JSON.parse(readFileSync('manifest.webmanifest'));assert.equal(m.display,'standalone');assert.equal(m.theme_color,'#282828');for(const icon of m.icons){assert.ok(existsSync('.'+icon.src));const bytes=readFileSync('.'+icon.src);assert.equal(bytes.subarray(1,4).toString(),'PNG');}});
+test('offline cache excludes APIs and models',()=>{const s=readFileSync('sw.js','utf8');assert.ok(!s.includes('cache.put'));assert.match(s,/SHELL.includes/);assert.doesNotMatch(s,/https:\/\/|huggingface\.co/);assert.match(s,/olli-shell-/);});

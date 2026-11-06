@@ -45,3 +45,7 @@ Use real, properly licensed SVG icons and genuine assets throughout Olli. No emo
 The user has accepted the current design for now. No visual or interaction design changes are permitted without their explicit request or approval of the specific change. Preserve the current graphite palette/materials, O/LL identity, real SVG assets, macOS-style traffic-light controls, dock/launcher, centered chat column, typography, spacing and motion/responsive treatment.
 
 If a change is necessary (including for accessibility, functional implementation, security or dependencies), explain the reason and proposed design impact before editing, and wait for approval. A general instruction to continue implementation is not approval to alter design. Functional work should use the existing design system without modifying it.
+
+## Approved on-device direction
+
+Users approved model weights downloaded with app setup and inference on their own devices. First delivery is an installable web app (PWA), NOT a native Android/iOS binary. Preserve accepted visual styling. App-shell caching is a bounded explicit offline asset list, separate from WebLLM's potentially large model cache. No chat/API/credential response caching. WebGPU and successful model downloads remain device requirements; no universal phone compatibility or verified offline model response is claimed.
