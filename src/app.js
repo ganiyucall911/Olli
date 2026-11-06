@@ -1,3 +1,4 @@
+import {panel,status,action,field,appButton} from './components/ui.js';
 import {renderLocalChat} from './local-chat.js';
 import {features,executionStatus,parseLists} from './features.js';
 const content=document.querySelector('#content');
@@ -11,7 +12,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!launchpad.hidden)t
 document.querySelector('#minimize-window').onclick=()=>{windowEl.hidden=true;launcher.focus();};
 document.querySelector('#close-window').onclick=()=>{windowEl.hidden=true;toggleLauncher(true);};
 document.querySelector('#maximize-window').onclick=e=>{const full=windowEl.classList.toggle('maximized');e.currentTarget.setAttribute('aria-label',full?'Restore window size':'Maximize window');};
-function notice(message) { const el=document.createElement('p');el.className='notice';el.setAttribute('role','status');el.textContent=message;content.append(el); }
+function notice(message) { content.append(status(message)); }
 function load(){try{items=parseLists(localStorage.getItem('olli.lists'));}catch{items=[];}}
 function save(){try{localStorage.setItem('olli.lists',JSON.stringify(items));return true;}catch{notice('Browser storage is unavailable. Changes are only kept for this session.');return false;}}
 function render(){
@@ -25,17 +26,18 @@ function render(){
  const desc=document.createElement('p');desc.className='description';desc.textContent=feature.description;content.append(label,heading,desc);
  if(active==='lists'){renderLists();return;}
  if(active==='chat'){renderLocalChat(content);return;}
- const card=document.createElement('div');card.className='card';
- const title=document.createElement('h3');title.textContent='Connection required';
- const p=document.createElement('p');p.textContent=active==='payments'?'Payment links and receipts are planned. No charges, purchases or card processing are available.':'This feature is part of Olli’s agreed scope, but its service is not connected in this fresh build.';
- card.append(title,p);content.append(card);
+ const card=panel({title:'Connection required',iconName:feature.icon,description:active==='payments'?'Payment links and receipts are planned. No charges, purchases or card processing are available.':'This feature is part of Olli’s agreed scope, but its service is not connected in this fresh build.'});
+ content.append(card);
  notice('No API calls or code execution are enabled. Secrets must never be entered in chat.');
 }
 function renderLists(){
- const form=document.createElement('form');form.className='list-form';const input=document.createElement('input');input.placeholder='Add something to your list';input.setAttribute('aria-label','New list item');input.maxLength=500;input.required=true;const add=document.createElement('button');add.textContent='Add item';form.append(input,add);form.onsubmit=e=>{e.preventDefault();const text=input.value.trim();if(!text)return;if(items.length>=500){notice('This list is limited to 500 items.');return;}items.push({text,done:false});render();save();content.querySelector('input').focus();};content.append(form);
- const ul=document.createElement('ul');ul.className='list';items.forEach((item,index)=>{const li=document.createElement('li');const label=document.createElement('label');const check=document.createElement('input');check.type='checkbox';check.checked=item.done;check.onchange=()=>{items[index].done=check.checked;save();};const text=document.createElement('span');text.textContent=item.text;label.append(check,text);const remove=document.createElement('button');remove.textContent='Remove';remove.setAttribute('aria-label','Remove '+item.text);remove.onclick=()=>{items.splice(index,1);render();save();};li.append(label,remove);ul.append(li);});content.append(ul);if(!items.length)notice('Your list is empty. Add your first item above.');notice('Local to this browser—not an account or cloud backup.');
+ const form=document.createElement('form');form.className='list-form';const input=field({label:'New list item',placeholder:'Add something to your list'});input.required=true;const add=action('Add item',{type:'submit',variant:'primary'});form.append(input,add);form.onsubmit=e=>{e.preventDefault();const text=input.value.trim();if(!text)return;if(items.length>=500){notice('This list is limited to 500 items.');return;}items.push({text,done:false});render();save();content.querySelector('input').focus();};content.append(form);
+ const ul=document.createElement('ul');ul.className='list';items.forEach((item,index)=>{const li=document.createElement('li');const label=document.createElement('label');const check=document.createElement('input');check.type='checkbox';check.checked=item.done;check.onchange=()=>{items[index].done=check.checked;save();};const text=document.createElement('span');text.textContent=item.text;label.append(check,text);const remove=action('Remove',{label:'Remove '+item.text});remove.onclick=()=>{items.splice(index,1);render();save();};li.append(label,remove);ul.append(li);});content.append(ul);if(!items.length)notice('Your list is empty. Add your first item above.');notice('Local to this browser—not an account or cloud backup.');
 }
-for(const f of features){const button=document.createElement('button');button.dataset.app=f.id;button.dataset.label=f.name;const icon=document.createElement('img');icon.src='/src/assets/icons/'+f.icon+'.svg';icon.alt='';icon.width=24;icon.height=24;const name=document.createElement('span');name.textContent=f.name;button.append(icon,name);button.onclick=()=>openApp(f.id);document.querySelector('#apps').append(button);const dockButton=button.cloneNode(true);dockButton.title=f.name;dockButton.setAttribute('aria-label',f.name);dockButton.onclick=()=>openApp(f.id);document.querySelector('#dock').append(dockButton);}
+for(const f of features){
+ document.querySelector('#apps').append(appButton(f,()=>openApp(f.id)));
+ const dockButton=appButton(f,()=>openApp(f.id));dockButton.title=f.name;document.querySelector('#dock').append(dockButton);
+}
 document.querySelector('#status').onclick=()=>{notice(executionStatus().reason);content.focus();};load();render();
 
 if('serviceWorker' in navigator && window.isSecureContext){navigator.serviceWorker.register('/sw.js').catch(()=>{/* Offline installation unavailable; normal online use remains available. */});}

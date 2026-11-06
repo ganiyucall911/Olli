@@ -89,3 +89,11 @@ textarea{font-size:13px;line-height:1.7;min-height:85px;padding:12px}form button
 #dock button{background:linear-gradient(145deg,#424242,#2d2d2d);border-color:#4a4a4a;box-shadow:inset 0 1px #ffffff16,0 3px 8px #0006}#dock button[aria-current=true]{border-color:#777;box-shadow:0 0 0 2px #181818,0 0 0 3px #5987ffb0,inset 0 1px #ffffff25,0 4px 12px #0008}
 #app-search{border-radius:22px}header button{border-radius:22px}.list-form{border-radius:24px}.list button{border-radius:20px}.notice{font-size:11px}
 @media(max-width:700px){.window{border-radius:29px}.chrome{padding-inline:18px}.workspace{padding:8px 9px 12px}#content{padding:26px 16px 30px;border-radius:22px}.card{padding:23px 18px;border-radius:23px}#dock{padding:12px;gap:9px}.card>button{width:100%;min-height:44px}form{border-radius:26px;padding:10px}form button{padding:12px 14px}#launchpad{border-radius:28px}#apps{gap:12px}}
+
+/* Shared component primitives: approved graphite treatment, across all screens. */
+.olli-panel-icon{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:15px;background:linear-gradient(145deg,#424242,#2d2d2d);border:1px solid #505050;box-shadow:inset 0 1px #ffffff18,0 3px 8px #0004;margin-bottom:15px}
+.olli-panel-icon img{filter:invert(1);opacity:.85;width:22px;height:22px}
+.olli-panel h3{margin-top:0}.olli-status{line-height:1.7}
+.olli-action{border:1px solid #505050;border-radius:24px;padding:11px 20px;background:linear-gradient(#474747,#373737);color:#eee;font-size:12px;box-shadow:inset 0 1px #ffffff18,0 4px 10px #0004}
+.olli-action:not(:disabled):hover{border-color:#737373;box-shadow:inset 0 1px #ffffff25,0 5px 14px #0005}
+.olli-action:disabled{cursor:not-allowed}.olli-field{outline-offset:4px}
